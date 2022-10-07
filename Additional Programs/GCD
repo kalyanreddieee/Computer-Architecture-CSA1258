@@ -1,0 +1,19 @@
+MVI A,2000        
+MVI B,2001      
+CMP B       
+JZ  down        
+JNC shift      
+MOV C,A       
+MOV A,B       
+MOV B,C       
+shift: SUB  B     
+CMP B           
+JZ  move        
+JNC shift        
+MOV C,A       
+MOV A,B       
+MOV B,C       
+JMP shift        
+move: MOV A,B       
+down: STA 2010        
+RST 1 
